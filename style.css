@@ -1,0 +1,259 @@
+.pop_up_menu  {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 320px;
+    max-width: 768px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 22px 22px 0px 0px;
+    background: var(--Dark-grey, #282827);
+    height: 588px;
+     /* position: fixed; */
+    /* left: 0;
+    right: 0;
+    bottom: -101%; */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+    z-index: 10;
+ 
+}
+
+
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+  
+
+}
+
+body._lock{
+    overflow: hidden;
+    
+}
+
+
+.nav_line_el {
+    width: 128px;
+    height: 3px;
+    border-radius: 22px;
+    background:  var(--Light-grey, #ECECEC);
+   
+    margin-left: auto;
+    margin-right: auto;
+    /* margin-top: auto;
+    margin-bottom: auto; */
+  
+    display: flex; 
+  align-items: center
+   /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+.nav_line{
+    height: 44px;
+    display: flex; 
+    align-items: center
+}
+.photo_menu_pop_up {
+    width: 290px;
+    height: 268px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-radius: 22px;
+    margin-bottom: 20px;
+    overflow: hidden;
+
+}
+@media screen and (min-width:375px){
+    .photo_menu_pop_up{
+        width: 342px;
+        height: 314px;
+    }
+    
+}
+.container_text_menu_pop_up {
+  
+    margin-left: auto;
+    margin-right: auto;
+   
+
+}
+.title_dish_pop_up {
+    width: 290px;
+    color: var(--White, #FFFBFA);
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 12px;
+   
+}
+@media screen and (min-width:375px){
+    .title_dish_pop_up{
+        width: 342px;
+    }
+    
+}
+.content_dish_pop_up {
+    overflow: hidden;
+    color: var(--White, #FFFBFA);
+    text-overflow: ellipsis;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 290px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 16px;
+   
+}
+@media screen and (min-width:375px){
+    .content_dish_pop_up{
+        width: 342px;
+        
+    }
+    
+}
+.price_dish_pop_up {
+    width: 290px;
+    color: var(--White, #FFFBFA);
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-left: auto;
+    margin-right: auto;
+   
+}
+@media screen and (min-width:375px){
+    .price_dish_pop_up{
+        width: 342px;
+        
+    }
+    
+}
+
+
+.photo_menu {
+    border-radius: 22px;
+    height: 90px;
+    width: 94px;
+    /* margin-right: 12px; */
+}
+.container_text_menu {
+    column-gap: normal;
+    display: grid;
+}
+.title_dish {
+    color: var(--Dark-grey, #282827);
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+    max-width: 236px;
+    align-self: stretch;
+    
+    /* margin-bottom: 100%; */
+
+
+}
+
+@media screen and (min-width: 375px) {
+    .title_dish{
+      width: 100%;
+    }
+      
+  }
+  @media screen and (min-width: 550px) {
+    .title_dish{
+    max-width: none;    }
+ 
+  }
+.max_box {
+    height: 114px;
+}
+
+
+.content_dish {
+    max-width: 236px;
+    max-height: 34px;
+    color: var(--Dark-grey, #282827);
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    overflow: scroll;
+    overflow: hidden;
+    display: none;
+
+
+}
+@media screen and (min-width: 375px) {
+    .content_dish{
+      display: inline;
+    }
+      
+  }
+@media screen and (min-width: 550px) {
+    .content_dish{
+    max-width: none;    }
+ 
+  }
+.price_dish {
+    color: var(--Dark-grey, #282827);
+    font-family: Roboto;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 0px;
+    margin-top: auto;
+    
+}
+
+
+.style{
+    border: 3px solid red;
+}
+
+.popup{
+    background: black;
+    width: 500px;
+    height: 500px;
+   position: fixed;
+   bottom: -101%;
+
+   /* transform: translateY(-100px); */
+
+}
+.popup.active{
+    transition:bottom 2;
+    bottom: 0;
+    /* transform: translateY(0); */
+
+}
+
+@keyframes testanimation {
+    1%{
+ bottom: -101%;
+    }
+    50%{
+        bottom: -50%;
+    }
+    100%{
+        bottom: 0;
+    }
+}
