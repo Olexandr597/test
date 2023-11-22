@@ -8,10 +8,10 @@
     border-radius: 22px 22px 0px 0px;
     background: var(--Dark-grey, #282827);
     height: 588px;
-     /* position: fixed; */
-    /* left: 0;
+     position: fixed;
+    left: 0;
     right: 0;
-    bottom: -101%; */
+    /* bottom: -101%; */
     margin-left: auto;
     margin-right: auto;
     padding-left: 24px;
@@ -229,31 +229,27 @@ body._lock{
     border: 3px solid red;
 }
 
-.popup{
+.popup {
     background: black;
     width: 500px;
     height: 500px;
-   position: fixed;
-   bottom: -101%;
-
-   /* transform: translateY(-100px); */
-
-}
-.popup.active{
-    transition:bottom 2;
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    border: 10px solid red;
+    animation: slideUp 0.5s ease-out ;
+    
+  }
+.active{
     bottom: 0;
-    /* transform: translateY(0); */
-
 }
 
-@keyframes testanimation {
-    1%{
- bottom: -101%;
+@keyframes slideUp {
+    0% {
+      transform: translateY(101%);
     }
-    50%{
-        bottom: -50%;
+    100% {
+      transform: translateY(0);
     }
-    100%{
-        bottom: 0;
-    }
-}
+  }

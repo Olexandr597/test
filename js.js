@@ -146,13 +146,10 @@ const mains = [
   
   function showPopup(elem) {
     if(isOpen){
-      // document.body.classList.toggle('_lock');
       isOpen = false;
-      //popup.classList.add("pop_up_menu");
+      document.body.classList.add('_lock');
       popup.classList.add("active")
-  
       popup.ontouchmove = () => {
-        // Hide the popup
         hidePopup();
       };
   
@@ -176,7 +173,8 @@ const mains = [
             document.body.classList.remove('_lock');
             isOpen = true;
             const popup = document.querySelector(".popup");
-            document.body.removeChild(document.querySelector(".popup"));
+            popup.classList.remove("active")
+
         }
 
 
