@@ -142,42 +142,78 @@ const mains = [
   ];
 
   let isOpen = true;
-
+  let startY;
   
   function showPopup(elem) {
-    if(isOpen){
+    if (isOpen) {
       isOpen = false;
       document.body.classList.add('_lock');
-      popup.classList.add("active")
-      popup.ontouchmove = () => {
-        hidePopup();
-      };
+      const popup = document.querySelector(".popup");
   
       popup.innerHTML = `
-      <div class="nav_line"><span class="nav_line_el"></span></div>
-      <img class="photo_menu_pop_up" src=${elem.img} alt="">
-      <div class="container_text_menu_pop_up">
-        <p class="title_dish_pop_up">${elem.name}</p>
-        <p class="price_dish_pop_up">${elem.price} грн</p>
-      </div>
+        <div class="nav_line"><span class="nav_line_el"></span></div>
+        <img class="photo_menu_pop_up" src=${elem.img} alt="">
+        <div class="container_text_menu_pop_up">
+          <p class="title_dish_pop_up">${elem.name}</p>
+          <p class="price_dish_pop_up">${elem.price} грн</p>
+        </div>
       `;
-
+  
+      // Append the popup to the body before adding the 'active' class
       document.body.appendChild(popup);
+  
+      // Force reflow before adding the 'active' class for smooth transition
+      popup.offsetHeight;
+  
+      // Add the 'active' class
+      popup.classList.add("active");
+  
+      // Add touch events to detect swipe
+      popup.addEventListener('touchstart', handleTouchStart, false);
+      popup.addEventListener('touchmove', handleTouchMove, false);
+      popup.addEventListener('touchend', handleTouchEnd, false);
     }
   }
   
-  
   function hidePopup() {
-
-        if(isOpen === false){
-            document.body.classList.remove('_lock');
-            isOpen = true;
-            const popup = document.querySelector(".popup");
-            popup.classList.remove("active")
-
-        }
-
-
+    if (!isOpen) {
+      const popup = document.querySelector(".popup");
+      
+      // Add the 'active2' class
+      popup.classList.add("active2");
+  
+      // Use a setTimeout to remove the 'active' class after the animation completes
+      setTimeout(() => {
+        popup.classList.remove("active");
+        document.body.classList.remove('_lock');
+        isOpen = true;
+  
+        // Remove touch events when the popup is hidden
+        popup.removeEventListener('touchstart', handleTouchStart, false);
+        popup.removeEventListener('touchmove', handleTouchMove, false);
+        popup.removeEventListener('touchend', handleTouchEnd, false);
+      }, 300); // 300 milliseconds, should match the transition duration
+    }
+  }
+  
+  function handleTouchStart(e) {
+    startY = e.touches[0].clientY;
+  }
+  
+  function handleTouchMove(e) {
+    if (!startY) return;
+  
+    const currentY = e.touches[0].clientY;
+    const diffY = currentY - startY;
+  
+    if (diffY > 50) { // You can adjust this threshold for sensitivity
+      hidePopup();
+      startY = null;
+    }
+  }
+  
+  function handleTouchEnd() {
+    startY = null;
   }
   
   const showArray = (array, mm) => {

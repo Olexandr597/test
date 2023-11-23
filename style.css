@@ -238,14 +238,19 @@ body._lock{
     right: 0;
     margin: 0 auto;
     border: 10px solid red;
-    animation: slideUp 0.5s ease-out ;
-    
+    animation: slideUp 0.5s ease-out, slideDown 0.5s ease-in;
   }
-.active{
+  
+  .active {
     bottom: 0;
-}
-
-@keyframes slideUp {
+  }
+  
+  .active2 {
+    /* opacity: 0; */
+    transition: opacity 0.3s ease-in;
+  }
+  
+  @keyframes slideUp {
     0% {
       transform: translateY(101%);
     }
@@ -253,3 +258,22 @@ body._lock{
       transform: translateY(0);
     }
   }
+  
+  @keyframes slideDown {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(101%);
+    }
+  }
+/*   
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+   */
