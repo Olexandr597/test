@@ -155,7 +155,7 @@ const mains = [
         <img class="photo_menu_pop_up" src=${elem.img} alt="">
         <div class="container_text_menu_pop_up">
           <p class="title_dish_pop_up">${elem.name}</p>
-          <p class="price_dish_pop_up">${elem.price} грн</p>
+          <p class="price_dish_pop_up">${elem.price}</p>
         </div>
       `;
   
@@ -180,7 +180,7 @@ const mains = [
       const popup = document.querySelector(".popup");
       
       // Add the 'active2' class
-      popup.classList.add("active2");
+      // popup.classList.add("active2");
   
       // Use a setTimeout to remove the 'active' class after the animation completes
       setTimeout(() => {

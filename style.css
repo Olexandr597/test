@@ -1,4 +1,4 @@
-.pop_up_menu  {
+/* .pop_up_menu  {
     box-sizing: border-box;
     width: 100%;
     min-width: 320px;
@@ -11,14 +11,13 @@
      position: fixed;
     left: 0;
     right: 0;
-    /* bottom: -101%; */
     margin-left: auto;
     margin-right: auto;
     padding-left: 24px;
     padding-right: 24px;
     z-index: 10;
  
-}
+} */
 
 
 body{
@@ -236,21 +235,24 @@ body._lock{
     position: fixed;
     left: 0;
     right: 0;
+    bottom: -101%;
     margin: 0 auto;
     border: 10px solid red;
-    animation: slideUp 0.5s ease-out, slideDown 0.5s ease-in;
+    transition: all 0.5s ease 0s;
+    /* animation: slideUp 0.5s ease-out; */
+
   }
   
-  .active {
+  .popup.active {
     bottom: 0;
   }
   
-  .active2 {
-    /* opacity: 0; */
+  /* .active2 {
+    /* opacity: 0; 
     transition: opacity 0.3s ease-in;
   }
-  
-  @keyframes slideUp {
+   */
+  /* @keyframes slideUp {
     0% {
       transform: translateY(101%);
     }
@@ -258,8 +260,8 @@ body._lock{
       transform: translateY(0);
     }
   }
-  
-  @keyframes slideDown {
+   */
+  /* @keyframes slideDown {
     0% {
       transform: translateY(0);
     }
@@ -267,7 +269,7 @@ body._lock{
       transform: translateY(101%);
     }
   }
-/*   
+   
   @keyframes fadeOut {
     0% {
       opacity: 1;
